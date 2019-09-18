@@ -8,6 +8,7 @@ resource "aws_subnet" "private" {
 
   tags = "${merge(
     var.aws_subnet_tags,
+    var.aws_subnet_private_tags,
     map(
       "Name", "${var.aws_subnet_prefix}-private-${var.aws_subnet_availability_zone[count.index]}"
     )
@@ -31,6 +32,7 @@ resource "aws_subnet" "public" {
 
   tags = "${merge(
     var.aws_subnet_tags,
+    var.aws_subnet_public_tags,
     map(
       "Name", "${var.aws_subnet_prefix}-public-${var.aws_subnet_availability_zone[count.index]}"
     )

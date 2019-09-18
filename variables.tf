@@ -22,6 +22,18 @@ variable "aws_subnet_tags" {
   default     = {}
 }
 
+variable "aws_subnet_public_tags" {
+  description = "Set of tags to be added to public subnets"
+  type        = map(string)
+  default     = {}
+}
+
+variable "aws_subnet_private_tags" {
+  description = "Set of tags to be added to private subnets"
+  type        = map(string)
+  default     = {}
+}
+
 variable "aws_subnet_cidr_private" {
   description = "List of CIDR for the private subnets"
   type        = "list"
